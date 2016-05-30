@@ -44,15 +44,15 @@ if ( $cgi->param() ) {
 
 $dbh = DBI -> connect ($dns, $username, $password)
 or &Error("Can not connect to database.");
-$comment2 = $cgi->param('Comment');
-$time1 = localtime;
+$comment = $cgi->param('Comment');
+$time = localtime;
 $SQL_QUERY3=<<__CURSOR_3__;
-INSERT INTO eliza (input, time) VALUES ( "$comment2", "$time1" ); 
+INSERT INTO eliza (input, time) VALUES ( ? , ? ); 
 __CURSOR_3__
 
 
 $cursor = $dbh->prepare( "$SQL_QUERY3" );
-$cursor->execute;  
+$cursor->execute($comment, $time);  
 
 $cursor->finish;
 $dbh->disconnect;
