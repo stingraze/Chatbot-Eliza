@@ -46,9 +46,9 @@ $dbh = DBI -> connect ($dns, $username, $password)
 or &Error("Can not connect to database.");
 $comment = $cgi->param('Comment');
 $time = localtime;
-$SQL_QUERY3=<<__CURSOR_3__;
+$SQL_QUERY3=<<__CURSOR__;
 INSERT INTO eliza (input, time) VALUES ( ? , ? ); 
-__CURSOR_3__
+__CURSOR__
 
 
 $cursor = $dbh->prepare( "$SQL_QUERY3" );
