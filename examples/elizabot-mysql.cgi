@@ -16,9 +16,9 @@ use CGI;
 use Chatbot::Eliza;
 use DBI;
 
-my ($dns) = "DBI:mysql:xxxxx:localhost";
-my ($username) = "xxxxx";
-my ($password) = "xxxxx";
+my ($dns) = "DBI:mysql:mysql:localhost";
+my ($username) = "root";
+my ($password) = "qwerty";
 my ($dbh, $sth);
 my (@ary);
 
